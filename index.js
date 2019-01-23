@@ -9,9 +9,7 @@ function showRepositories(event, data) {
   const repos = JSON.parse(this.responseText);
   const src = document.getElementById('repository-template').innerHTML;
     const template = Handlebars.compile(src);
-  const repoList = `<ul>${repos
-    .map(r => '<li><a href="' + r.html_url + '">'  + r.name + '</li>')
-    .join('')}</ul>`;
+  const repoList = 
   document.getElementById('repositories').innerHTML = repoList;
 }
 
