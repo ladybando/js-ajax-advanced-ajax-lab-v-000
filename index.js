@@ -11,6 +11,12 @@ function showRepositories(event, data) {
   const src = document.getElementById('repository-template').innerHTML;
   const template = Handlebars.compile(src);
   const repoList = template(repos);
+  document.addEventListener('DOMContentLoaded', function(event) {
+  Handlebars.registerPartial(
+    'authorPartial',
+    document.getElementById('author-partial-template').innerHTML
+  );
+});
   document.getElementById('repositories').innerHTML = repoList;
   
 }
